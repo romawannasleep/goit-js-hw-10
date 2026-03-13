@@ -1,9 +1,7 @@
 const timer = document.querySelector(".timer");
 const startBtn = document.querySelector('[data-start]')
 const field = document.querySelector("#datetime-picker");
-import flatpickr from "flatpickr";
 import "flatpickr/dist/flatpickr.min.css";
-import iziToast from "izitoast";
 import "izitoast/dist/css/iziToast.min.css";
 let userSelectedDate;
 startBtn.disabled = true;
