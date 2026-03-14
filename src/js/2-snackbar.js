@@ -23,13 +23,15 @@ promise.then(
       title: 'Success',
       message: `✅ Fulfilled promise in ${value}ms`,
     });
-  },
-  error => {
+  }
+);
+promise.catch(
+    error => {
     console.log(`❌ Rejected promise in ${error}ms`);
     iziToast.error({
     title: 'Error',
     message: `❌ Rejected promise in ${error}ms`,
 }); 
-  }
+}
 );
 });

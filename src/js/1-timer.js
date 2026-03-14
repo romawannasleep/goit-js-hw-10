@@ -31,17 +31,20 @@ const options = {
 flatpickr("#datetime-picker", options);
 let intervalId;
 startBtn.addEventListener('click', () => {
+  startBtn.disabled = true;
   intervalId = setInterval (() => {
     const currentTime = Date.now();
   const diff = userSelectedDate - currentTime;
   // console.log(convertMs(diff));
   if(diff > 0){
+    
   const dataDays = document.querySelector('[data-days]').textContent = convertMs(diff).days.toString().padStart(2,'0');
 const dataHours = document.querySelector('[data-hours]').textContent = convertMs(diff).hours.toString().padStart(2,'0');
 const dataMinutes = document.querySelector('[data-minutes]').textContent = convertMs(diff).minutes.toString().padStart(2,'0');
 const dataSeconds = document.querySelector('[data-seconds]').textContent = convertMs(diff).seconds.toString().padStart(2,'0');
   }else{
     clearInterval(intervalId);
+    startBtn.disabled = true;
   }
   }, 1000);
 });
